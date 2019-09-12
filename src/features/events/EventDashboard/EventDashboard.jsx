@@ -138,6 +138,7 @@ class EventDashboard extends Component {
           />
           {isOpen && (
             <EventForm
+              /* with this key, react creates a new instance of our event form when the properties change or the key changes to be more precise in this case */
               key={selectedEvent ? selectedEvent.id : 0}
               updateEvent={this.handleUpdateEvent}
               selectedEvent={selectedEvent}
