@@ -5,6 +5,7 @@ const initialState = {
   data: 42
 };
 
+// the reducer makes a copy of the (init) state, and the action increment the (init) state by 1, and pass the (new) state to the -> store
 const incrementCounter = state => {
   return { ...state, data: state.data + 1 };
 };

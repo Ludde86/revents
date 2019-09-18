@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { incrementCounter, decrementCounter } from "./testActions";
 import { Button } from "semantic-ui-react";
 
-// state from testReducer (test from the rootReducer)
+// and we can now use the state here as props - state from testReducer (test from the rootReducer)
 const mapState = state => ({
   // here we select from the state, what we will use as props in this component
   // we assign the state (state.test.data) here (into data)
@@ -24,6 +24,7 @@ class TestComponent extends Component {
       <div>
         <h1>Test Component</h1>
         <h3>The answer is: {data}</h3>
+        {/* when this button ic clicked, we call the action creator -> (incrementCounter) */}
         <Button onClick={incrementCounter} positive content='Increment' />
         <Button onClick={decrementCounter} negative content='Decrement' />
       </div>

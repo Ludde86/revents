@@ -6,17 +6,21 @@ import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import { configureStore } from "./app/store/configureStore";
+import ScrollToTop from "./app/common/util/ScrollToTop";
 
 const store = configureStore();
-console.log(store.getState());
+/* console.log(store.getState()); */
 
 const rootEl = document.getElementById("root");
 
 let render = () => {
   ReactDOM.render(
+    // the state is then passed to the components as props via mapState -> (testComponent)
     <Provider store={store}>
       <BrowserRouter>
-        <App />
+        <ScrollToTop>
+          <App />
+        </ScrollToTop>
       </BrowserRouter>
     </Provider>,
     rootEl
